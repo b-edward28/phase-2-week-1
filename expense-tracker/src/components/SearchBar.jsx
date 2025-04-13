@@ -3,7 +3,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
     <input
       type="text"
       className="form-control"
-      placeholder="🔍 Search"
+      placeholder="🔍 Search by description/category"
       value={searchTerm}
       onChange={(event) => setSearchTerm(event.target.value)}
       />

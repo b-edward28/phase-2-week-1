@@ -1,10 +1,9 @@
 import ExpenseRow from './ExpenseRow.jsx';
-export default function ExpenseTable({ expenses, setExpenses, }) {
+function ExpenseTable({ expenses, setExpenses, }) {
 
     function handleDelete(id) {
-        setExpenses((prevExpenses) => 
-            prevExpenses.filter((expense) => expense.id !== id)
-        );
+        setExpenses((prev) => prev.filter((expense) => expense.id !== id)
+    );
     }
    
     return (
@@ -15,15 +14,15 @@ export default function ExpenseTable({ expenses, setExpenses, }) {
                         <th>Name</th>
                         <th>Description</th>
                         <th>Category</th>
-                        <th>Amount</th>
+                        <th>Amount(KES)</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {expenses.map((expense, index) => (
+                    {expenses.map((expense) => (
                         <ExpenseRow 
-                        key={index} 
+                        key={expense.id} 
                         expense={expense}
                         handleDelete={handleDelete}  
                         />
@@ -34,3 +33,4 @@ export default function ExpenseTable({ expenses, setExpenses, }) {
     );
 
 }
+export default ExpenseTable;

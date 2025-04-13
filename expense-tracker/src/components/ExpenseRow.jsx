@@ -9,9 +9,9 @@ function ExpenseRow({ expense, handleDelete}) {
             <td>{expense.date}</td>
             <td>
                 <button 
-                type="button" 
                 className="btn btn-danger" 
-                onclick={() => handleDelete(expense.id)}>
+                onClick={() => handleDelete(expense.id)}
+                >
                     Delete
                 </button>
             </td>
