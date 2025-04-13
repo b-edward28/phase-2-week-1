@@ -1,6 +1,6 @@
 import ExpenseRow from './ExpenseRow.jsx';
 function ExpenseTable({ expenses }) {
-
+   
     return (
         <div className="table-responsive">
             <table className="table table-bordered table-striped">

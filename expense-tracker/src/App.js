@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseTable from './components/ExpenseTable';
+import SearchBar from './components/SearchBar';
 import './App.css';
 
 function App() {
@@ -38,11 +39,25 @@ function App() {
       id: 4
     }
   ]);
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredExpenses = expenses.filter((expense) =>
+    expense.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    expense.category.toLowerCase().includes(searchTerm.toLowerCase())
+
+  );
   
   return (
   <div className="container py-4">
     <h1 className="fw-bold">Expense Tracker</h1>
     <p>Track your expenses and manage your finances efficiently.</p>
+    
+    <div className="row justify-content-center my-2">
+      <div className="col-md-3">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
+    </div>
     
     <div className="row">
       <div className="col-md-6">
@@ -50,7 +65,7 @@ function App() {
       </div>
 
       <div className="col-md-6">
-        <ExpenseTable expenses={expenses} />
+        <ExpenseTable expenses={filteredExpenses} setExpenses={setExpenses} />
       </div>
     </div>
   </div>
