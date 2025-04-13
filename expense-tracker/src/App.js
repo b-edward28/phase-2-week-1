@@ -51,20 +51,20 @@ function App() {
   return (
   <div className="container py-4">
     <h1 className="fw-bold">Expense Tracker</h1>
-    <p>Track your expenses and manage your finances efficiently.</p>
+    <p>Start taking control of your finances and life. Record, categorize and analyze your spending.</p>
     
-    <div className="row justify-content-center my-2">
-      <div className="col-md-3">
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      </div>
-    </div>
     
-    <div className="row">
-      <div className="col-md-6">
+    <div className="d-flex flex-row">
+      <div className="col-md-4 me-3">
         <ExpenseForm setExpenses={setExpenses} />
       </div>
-
-      <div className="col-md-6">
+    
+      <div className="col-md-8">
+        <div className="row my-2">
+          <div className="col-md-4">
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          </div>
+        </div>
         <ExpenseTable expenses={filteredExpenses} setExpenses={setExpenses} />
       </div>
     </div>
