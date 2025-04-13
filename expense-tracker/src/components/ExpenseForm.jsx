@@ -84,6 +84,7 @@ function ExpenseForm({ setExpenses }) {
                         onChange={(e) => setDate(e.target.value)} 
                         />
                     </div>
+                    <button type="submit" className="btn btn-dark w-100">Submit</button>
                 </form>
             </div>
         </div>
