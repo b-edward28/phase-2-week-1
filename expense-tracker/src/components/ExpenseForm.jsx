@@ -42,7 +42,8 @@ function ExpenseForm({ setExpenses }) {
                         id="name" 
                         placeholder="Expense Name" 
                         value={name} 
-                        onChange={(e) => setName(e.target.value)} 
+                        onChange={(e) => setName(e.target.value)}
+                        required 
                         />
                     </div>
                     <div className="mb-3">
@@ -52,7 +53,8 @@ function ExpenseForm({ setExpenses }) {
                         id="description" 
                         placeholder="Expense Description" 
                         value={description} 
-                        onChange={(e) => setDescription(e.target.value)} 
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
                         />
                     </div>
                     <div className="mb-3">
@@ -62,7 +64,8 @@ function ExpenseForm({ setExpenses }) {
                         id="category" 
                         placeholder="Expense Category" 
                         value={category} 
-                        onChange={(e) => setCategory(e.target.value)} 
+                        onChange={(e) => setCategory(e.target.value)}
+                        required 
                         />
                     </div>
                     <div className="mb-3">
@@ -72,7 +75,8 @@ function ExpenseForm({ setExpenses }) {
                         id="amount" 
                         placeholder="Expense Amount" 
                         value={amount} 
-                        onChange={(e) => setAmount(e.target.value)} 
+                        onChange={(e) => setAmount(e.target.value)}
+                        required
                         />
                     </div>
                     <div className="mb-3">
@@ -81,7 +85,8 @@ function ExpenseForm({ setExpenses }) {
                         className="form-control" 
                         id="date" 
                         value={date} 
-                        onChange={(e) => setDate(e.target.value)} 
+                        onChange={(e) => setDate(e.target.value)}
+                        required 
                         />
                     </div>
                     <button type="submit" className="btn btn-dark w-100">Submit</button>
